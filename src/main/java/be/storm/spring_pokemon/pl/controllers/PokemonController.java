@@ -33,7 +33,8 @@ public class PokemonController {
     public String getOne(@PathVariable UUID id, Model model) {
 
         try{
-            PokemonDetailsDTO dto = PokemonDetailsDTO.
-        }
+            PokemonDetailsDTO dto = PokemonDetailsDTO.fromPokemon(pokemonService.findById(id));
+            return "pokemon/details";
+        } catch (Exception e) {}
     }
 }
