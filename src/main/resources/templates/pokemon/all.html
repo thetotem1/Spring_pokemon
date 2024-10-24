@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<main>
+    <table>
+        <thead>
+        <tr>
+            <th> Pokedex</th>
+            <th> Name</th>
+            <th> Sex</th>
+            <th> Type</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="pokemon: ${pokemons}" th:object="${pokemon}">
+            <td th:text="*{dexNbr()}"></td>
+            <td th:text="*{name()}"></td>
+            <td th:text="*{sex()}"></td>
+            <td th:text="*{type()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+</body>
+</html>
